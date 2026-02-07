@@ -1,0 +1,751 @@
+.records-page {
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.records-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.records-header p {
+  color: var(--text-secondary);
+}
+
+/* Tabs */
+.records-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.tab-button.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Vitals Summary */
+.vitals-summary h2,
+.recent-labs h2,
+.active-prescriptions h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.vital-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.vital-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.vital-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.vital-info {
+  flex: 1;
+}
+
+.vital-info h3 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.vital-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.vital-unit {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.vital-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.vital-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.status-normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-borderline {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+.status-abnormal {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+/* Recent Labs */
+.labs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lab-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.lab-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.lab-item h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.lab-meta {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.category-badge {
+  padding: 0.375rem 0.75rem;
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.lab-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-preview {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.result-param {
+  color: var(--text-secondary);
+}
+
+.result-status {
+  font-weight: 600;
+}
+
+.btn-view-full {
+  padding: 0.625rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-view-full:hover {
+  background: var(--primary-dark);
+}
+
+/* Active Prescriptions */
+.prescriptions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.prescription-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.prescription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.prescription-card h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.prescription-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.prescription-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.prescription-badge.completed {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.prescription-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.detail-label {
+  color: var(--text-secondary);
+}
+
+.detail-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.prescription-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+/* Vitals Tab */
+.vitals-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.chart-controls h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.vital-selector {
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  background: white;
+  cursor: pointer;
+}
+
+.chart-container {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.vitals-table {
+  margin-top: 2rem;
+}
+
+.vitals-table h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.vitals-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vitals-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vitals-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.vitals-table tbody tr:hover {
+  background: var(--bg-secondary);
+}
+
+/* Lab Results Tab */
+.labs-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.labs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.labs-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-controls label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.category-filter {
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  background: white;
+  cursor: pointer;
+}
+
+.lab-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lab-result-card {
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.lab-card-header {
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.lab-card-header h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lab-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.lab-results-table {
+  padding: 1.5rem;
+}
+
+.lab-results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lab-results-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.lab-results-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.param-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.param-value {
+  color: var(--text-primary);
+}
+
+.param-range {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.lab-card-footer {
+  padding: 1rem 1.5rem;
+  background: var(--bg-secondary);
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-download,
+.btn-share {
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.btn-download {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-download:hover {
+  background: var(--primary-dark);
+}
+
+.btn-share {
+  background: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-share:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Prescriptions Tab */
+.prescriptions-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.prescriptions-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.prescriptions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.prescription-group h3 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.prescription-item {
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.prescription-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.prescription-item.completed {
+  opacity: 0.75;
+  border-color: #e5e7eb;
+}
+
+.prescription-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.medication-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.medication-icon.inactive {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.prescription-info {
+  flex: 1;
+}
+
+.prescription-info h4 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.prescription-dosage {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.prescription-purpose {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.prescription-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-item .label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.detail-item .value {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.prescription-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-refill,
+.btn-details {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.btn-refill {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.btn-refill:hover {
+  background: #059669;
+}
+
+.btn-details {
+  background: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-details:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .records-page {
+    padding: 1rem 0;
+  }
+
+  .records-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .records-header button {
+    width: 100%;
+  }
+
+  .records-tabs {
+    flex-direction: column;
+  }
+
+  .vitals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prescriptions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .vital-selector,
+  .category-filter {
+    width: 100%;
+  }
+
+  .labs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .filter-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vitals-table {
+    overflow-x: auto;
+  }
+
+  .lab-results-table {
+    overflow-x: auto;
+  }
+
+  .prescription-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prescription-actions {
+    flex-direction: column;
+  }
+}

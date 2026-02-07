@@ -1,0 +1,329 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Variables for theming */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Accessibility colors */
+  --focus-color: #ffa500;
+  --focus-outline-width: 3px;
+  --focus-offset: 2px;
+  --error-color: #dc2626;
+  --success-color: #16a34a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* ===== ACCESSIBILITY STYLES ===== */
+
+/* High contrast focus indicators */
+*:focus {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+/* Only show focus outline on keyboard navigation */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+/* Form elements enhanced focus */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: 1px;
+  border-color: var(--focus-color);
+}
+
+/* Button focus styles */
+button:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+  box-shadow: 0 0 0 4px rgba(255, 165, 0, 0.2);
+}
+
+/* Link focus styles */
+a:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* High contrast error states */
+.input-error {
+  border-color: var(--error-color) !important;
+  border-width: 2px !important;
+}
+
+.input-error:focus {
+  outline-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+/* Success state for valid inputs */
+.input-success {
+  border-color: var(--success-color) !important;
+}
+
+/* Error message styling */
+.error-text,
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.error-text::before,
+.error-message::before {
+  content: '⚠';
+  font-size: 1rem;
+}
+
+/* Keyboard navigation indicators for interactive elements */
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="menuitem"]:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+/* Improve contrast for disabled elements */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading/busy state indication */
+[aria-busy="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Live region for announcements */
+#a11y-announcer {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --focus-outline-width: 4px;
+    --border-color: #000000;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ===== END ACCESSIBILITY STYLES ===== */
+
+/* Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}

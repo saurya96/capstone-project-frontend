@@ -1,0 +1,34 @@
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.notfound-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.notfound-code {
+  font-size: 8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.notfound-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.notfound-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+}
