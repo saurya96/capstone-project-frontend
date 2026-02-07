@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'capstone-project-backend-9bff.vercel.app';
 
 export const handlers = [
   // Auth endpoints
