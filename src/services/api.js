@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
 // JSON Server API base URL - Use environment variable in production
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://capstone-project-backend-fl18.vercel.app';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://capstone-project-backend-cl62.onrender.com';
 
 // Create axios instance
 const api = axios.create({

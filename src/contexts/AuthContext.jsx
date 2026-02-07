@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://capstone-project-backend-fl18.vercel.app';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://capstone-project-backend-cl62.onrender.com';
 
 const AuthContext = createContext(null);
 
