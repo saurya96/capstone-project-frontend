@@ -34,10 +34,18 @@ export const AuthProvider = ({ children }) => {
       
       // Fetch users from backend
       const response = await axios.get(`${API_BASE_URL}/users`);
-      const users = response.data;
+      let users = response.data;
+      
+      // Handle if response is not an array (could be an object with users property)
+      if (!Array.isArray(users)) {
+        console.log('⚠️ Response is not an array, extracting users...');
+        users = users.users || [];
+      }
       
       console.log('📊 Total users in backend:', users.length);
-      console.log('📧 All registered emails:', users.map(u => u.email));
+      if (users.length > 0) {
+        console.log('📧 All registered emails:', users.map(u => u.email));
+      }
 
       // First check if email exists (case-insensitive)
       const userWithEmail = users.find(u => u.email.toLowerCase() === normalizedEmail);
@@ -78,7 +86,14 @@ export const AuthProvider = ({ children }) => {
       
       // Fetch existing users from backend
       const response = await axios.get(`${API_BASE_URL}/users`);
-      const users = response.data;
+      let users = response.data;
+      
+      // Handle if response is not an array
+      if (!Array.isArray(users)) {
+        console.log('⚠️ Response is not an array, extracting users...');
+        users = users.users || [];
+      }
+      
       console.log('📊 Current users count:', users.length);
       
       // Check if email already exists
